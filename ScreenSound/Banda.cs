@@ -1,9 +1,15 @@
 ﻿class Banda
 {
+    // Constructor
+    public Banda(string nome)
+    {
+        NomeBanda = nome;
+    }
+    // Declaração de atributos e propriedades da classe
     private List<Album> albuns = new List<Album>();
-    public string NomeBanda { get; set; }
+    public string NomeBanda { get; }
 
-    // Método para adicionar albúns em uma lista de albuns
+    // Método para adicionar albuns em uma lista de albuns da banda
     public void AdicionarAlbum(Album album)
     {
         albuns.Add(album);
@@ -16,7 +22,7 @@
 
         foreach(Album album in albuns)
         {
-            Console.WriteLine($"Álbum: {album.Nome} ({album.DuracaoTotal})");
+            Console.WriteLine($"Álbum: {album.NomeAlbum} ({album.DuracaoTotal})");
         }
     }
 }

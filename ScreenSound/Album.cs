@@ -1,9 +1,15 @@
 ﻿class Album
 {
+    // Constructor
+    public Album(string nome)
+    {
+        NomeAlbum = nome;
+    }
 
     // Declaração de atributos e propriedades da classe
     private List<Musica> musicas = new List<Musica>();
-    public string Nome { get; set; }
+
+    public string NomeAlbum { get; }
     public int DuracaoTotal => musicas.Sum(x => x.Duracao);
 
     //Método para adicionar músicas ao álbum
@@ -15,11 +21,11 @@
     //Método para exibir as músicas e a soma das durações das músicas do álbum
     public void ExibirMusicasDoAlbum()
     {
-        Console.WriteLine($"Lista de músicas do álbum {Nome}:\n");
+        Console.WriteLine($"\nLista de músicas do álbum {NomeAlbum}:\n");
 
         foreach (var musica in musicas)
         {
-            Console.WriteLine($"Música: {musica.Nome}");
+            Console.WriteLine($"Música: {musica.NomeMusica}");
         }
 
         Console.WriteLine($"\nPara ouvir esse álbum inteiro você precisa de {DuracaoTotal}");

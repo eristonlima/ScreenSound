@@ -1,23 +1,26 @@
 ﻿class Musica
 {
-    public Musica(Banda artista)
+    // Constructor
+    public Musica(Banda artista, string nome)
     {
         Artista = artista;
+        NomeMusica = nome;
     }
 
-    public string Nome { get; set; }
+    // Declaração de atributos e propriedades da classe
+    public string NomeMusica { get; }
     public Banda Artista { get; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
 
     // Atribuição feita através de expressões Lambda
-    public string DescricaoResumida => $"A música {Nome} pertence à banda {Artista}";
+    public string DescricaoResumida => $"A música {NomeMusica} pertence à banda {Artista}";
 
     // Método que exibe a ficha técnica da música
     public void ExibirFichaTecnica()
     {
-        Console.WriteLine($"Nome: {Nome}");
-        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"\nNome: {NomeMusica}");
+        Console.WriteLine($"Artista: {Artista.NomeBanda}");
         Console.WriteLine($"Duração: {Duracao}");
 
         if (Disponivel)

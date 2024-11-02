@@ -1,25 +1,13 @@
-﻿Banda queen = new(); ;
-queen.NomeBanda = "Queen";
+﻿Episodio ep1 = new(1, "Técnicas de Facilitação", 45);
+ep1.AdicionarConvidados("Maria");
+ep1.AdicionarConvidados("Marcelo");
 
-Album albumDoQueen = new Album();
+Episodio ep2 = new(2, "Técnicas de Aprendizado", 67);
+ep2.AdicionarConvidados("Fernando");
+ep2.AdicionarConvidados("Marcelo");
+ep2.AdicionarConvidados("Flavia");
 
-albumDoQueen.Nome = "A night at the opera";
-
-Musica musica1 = new Musica(queen);
-musica1.Nome = "Love Of My Life";
-musica1.Duracao = 213;
-
-// Outra forma de representar, criando um atributo novo de uma determinada classe e atribuindo valores
-Musica musica2 = new Musica(queen)
-{
-    Nome = "Bohemian Rhapsody",
-    Duracao = 354
-};
-
-albumDoQueen.AdicionarMusica(musica1);
-albumDoQueen.AdicionarMusica(musica2);
-
-albumDoQueen.ExibirMusicasDoAlbum();
-
-queen.AdicionarAlbum(albumDoQueen);
-queen.ExibirDiscografia();
+Podcast podcast = new("Podcast Especial", "Daniel");
+podcast.AdicionarEpisodios(ep1);
+podcast.AdicionarEpisodios(ep2);
+podcast.ExibirDetalhes();
